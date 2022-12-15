@@ -8,9 +8,10 @@
 int main(void)
 {
 	char *line;
+	char **tokens;
 	struct stat buf;
-	
-	while(1) /* True, infinite loop */
+
+	while (1) /* True, infinite loop */
 	{
 		prompt(STDIN_FILENO, buf);/*STDIN_FILENO MACRO== file descriptor == 0*/
 		line = _getline(stdin);/*FILE * line = input cmd*/
@@ -19,7 +20,10 @@ int main(void)
 			free(line);
 			continue;
 		}
+		tokens = tokenizer(line);
+		if (tokens[0] == NULL)
+			continue;
 	}
-	
+
 	return (0);
 }

@@ -5,7 +5,7 @@
  * @name: input supplied by the user
  * @var: variable to compare against
  * @len: length of the input
- * 
+ *
  *Return: 1 if strings are equal, -1 if they are not
 */
 int _strncmp(char *name, char *var, unsigned int len)
