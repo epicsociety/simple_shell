@@ -30,4 +30,3 @@ void cd_p(char *line)
 		chdir(param_array[1]);
 	double_free(param_array);
 }
-
