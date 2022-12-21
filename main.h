@@ -32,17 +32,16 @@ char *search_directories(char **path_tokens, char *command);
 
 /*Utility functions (string tools)*/
 int _strncmp(char *name, char *var, unsigned int len);
+int _strcmp(char *, char *);
+char *_strdup(char *);
+void print_str(char *, int);
+int print_number(int);
+int _write_char(char);
 
 /*Other essential functions */
 
 /* builtin functions */
 void cd_p(char *);
 
-/*Holberton library functions*/
-int _strcmp(char *, char *);
-char *_strdup(char *);
-void print_str(char *, int);
-int print_number(int);
-int _write_char(char);
 
 #endif
