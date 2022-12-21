@@ -35,11 +35,11 @@ void double_free(char **to_be_freed)
 }
 
 /**
- * str_len - Calculates the lenght of a string.
+ * _strlen - Calculates the lenght of a string.
  * @str: String that needs length to be found.
  * Return: Upon success returns the length of a string. otherwise 0.
  */
-int str_len(char *str)
+int _strlen(char *str)
 {
 	int i;
 
@@ -81,7 +81,7 @@ int _strcmp(char *s1, char *s2)
 {
 	int i;
 
-	if (str_len(s1) != str_len(s2))
+	if (_strlen(s1) != _strlen(s2))
 		return (-1);
 	for (i = 0; s1[i] != '\0'; i++)
 	{

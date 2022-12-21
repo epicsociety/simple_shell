@@ -50,7 +50,7 @@ int find_path(char *str)
 	int len;
 	int j;
 
-	len = str_len(str);
+	len = _strlen(str);
 	for (i = 0; environ[i] != NULL; i++)
 	{
 		for (j = 0; j < len; j++)
@@ -81,7 +81,7 @@ char **tokenize_path(int index, char *str)
 	char **path_tokens;
 	int len;
 
-	len = str_len(str);
+	len = _strlen(str);
 	token_count = 0;
 	/*Moving the pointer len of str plus = sign*/
 	env_var = environ[index] + (len + 1);
@@ -155,8 +155,8 @@ char *build_path(char *directory, char *command)
 
 	if (directory == NULL || command == NULL)
 		return (NULL);
-	dir_len = str_len(directory) + 1;
-	command_len = str_len(command) + 1;
+	dir_len = _strlen(directory) + 1;
+	command_len = _strlen(command) + 1;
 	len = dir_len + command_len;
 
 	built = malloc(sizeof(char) * len);
