@@ -31,6 +31,11 @@ typedef struct built_s{
 	int (*p)(void);
 } built_s;
 
+typedef struct builtin_d
+{
+	char *built;
+	void (*f)(char *);
+} builtin_t;
 
 char *_getline(FILE *fp);
 void prompt(int fd, struct stat buf);
@@ -39,6 +44,7 @@ char **token_interface(char *, const char *, int);
 char **tokenize(int, char *, const char *);
 int find_path(char *);
 int str_len(char *);
+void exit_b(char *line);
 void double_free(char **);
 void single_free(int, ...);
 int count_token(char *, const char *);
@@ -60,8 +66,9 @@ void free_dp(char **array, unsigned int length);
 
 
 /* builtin functions */
-void cd_p(char *);
-
+void cd_b(char *);
+void (*check_built_ins(char *str))(char *str);
+int built_in(char **command, char *line);
 /*Helper functions (string tools)*/
 int _strcmp(char *, char *);
 int _strlen(char *str);

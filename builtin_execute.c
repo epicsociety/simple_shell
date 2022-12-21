@@ -50,3 +50,14 @@ int shell_num_builtins(built_s builtin[])
 
 	return (i);
 }
+/**
+ * shell_exit -  exits the shell
+ *
+ * Return: void
+*/
+int shell_exit(void)
+{
+
+	return (-1);
+
+}
