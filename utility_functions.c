@@ -21,7 +21,7 @@ void print_str(char *str, int new_line)
 
 /**
  * _strdup - duplicates one string into another
- * @str: the string to be duplicated
+ * @src: the source string to be duplicated
  *
  * Return: a pointer to a duplicate of the string
 */
