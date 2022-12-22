@@ -39,7 +39,7 @@ void double_free(char **to_be_freed)
  * @str: String that needs length to be found.
  * Return: Upon success returns the length of a string. otherwise 0.
  */
-int _strlen(char *str)
+int _strlen(const char *str)
 {
 	int i;
 

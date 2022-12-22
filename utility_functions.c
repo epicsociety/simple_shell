@@ -25,7 +25,9 @@ void print_str(char *str, int new_line)
  *
  * Return: a pointer to a duplicate of the string
 */
-char *_strdup(char *src)
+
+/**
+char *_strdup(const char *src)
 {
 	int i;
 	int len;
@@ -39,6 +41,7 @@ char *_strdup(char *src)
 	dest[i] = '\0';
 	return (dest);
 }
+*/
 
 /**
  * *_strcpy - copies string pointed to by src to the buffer pointed to dest
@@ -57,3 +60,39 @@ char *_strcpy(char *dest, char *src)
 
 	return (dest);
 }
+
+/**
+ * _strcat - concatenates two strings
+ * @dest: the destination buffer
+ * @src: the source buffer
+ *
+ * Return: pointer to destination buffer
+ */
+char *_strcat(char *dest, char *src)
+{
+	char *ret = dest;
+
+	while (*dest)
+		dest++;
+	while (*src)
+		*dest++ = *src++;
+	*dest = *src;
+	return (ret);
+}
+
+
+/**
+ * starts_with - checks if needle starts with haystack
+ * @haystack: string to search
+ * @needle: the substring to find
+ *
+ * Return: address of next char of haystack or NULL
+ */
+char *starts_with(const char *haystack, const char *needle)
+{
+	while (*needle)
+		if (*needle++ != *haystack++)
+			return (NULL);
+	return ((char *)haystack);
+}
+
