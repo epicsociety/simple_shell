@@ -6,9 +6,17 @@
 #include <string.h>
 #include <stdarg.h>
 #include <unistd.h>
+#include <fcntl.h>
+#include <limits.h>
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+#include <errno.h>
+
+/* for read/write buffers */
+#define READ_BUF_SIZE 1024
+#define WRITE_BUF_SIZE 1024
+#define BUF_FLUSH -1
 
 extern char **environ;
 
@@ -102,12 +110,16 @@ char **tokenizer(char *str);
 char **token_interface(char *, const char *, int);
 char **tokenize(int, char *, const char *);
 int find_path(char *);
+int _putfd(char c, int fd);
+int _putsfd(char *str, int fd);
 int str_len(char *);
+void _eputs(char *);
 void exit_b(char *line);
 char *_strcat(char *dest, char *src);
 char **list_to_strings(list_t *head);
 void double_free(char **);
 void single_free(int, ...);
+char *_getenv(info_t *, const char *);
 int count_token(char *, const char *);
 char *path_finder(char *command);
 char **tokenize_path(int index, char *str);
@@ -147,6 +159,11 @@ size_t print_list_str(const list_t *);
 int delete_node_at_index(list_t **, unsigned int);
 int _unsetenv(info_t *, char *);
 int _setenv(info_t *, char *, char *);
+char *get_history_file(info_t *info);
+int write_history(info_t *info);
+int read_history(info_t *info);
+int build_history_list(info_t *info, char *buf, int linecount);
+int renumber_history(info_t *info);
 int _strncmp(char *name, char *var, unsigned int len);
 char *_strcpy(char *dest, char *src);
 
