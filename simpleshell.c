@@ -35,7 +35,7 @@ int main(void)
 		if (builtin_status == -1)
 			_exit(EXIT_SUCCESS);
 		flag = 0; /* 0 if full_path is not malloc'd */
-		path = _getenv("PATH");
+		path = _env("PATH");
 		fullpath = _which(tokens[0], fullpath, path);
 		if (fullpath == NULL)
 			fullpath = tokens[0];

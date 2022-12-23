@@ -4,7 +4,7 @@
  * @name: environment variable to get
  * Return: pointer to environment variable or NULL if there is no match
  */
-char *_getenv(const char *name)
+char *_env(const char *name)
 {
 	char **environ_copy;
 	char *variable, *value, *path;

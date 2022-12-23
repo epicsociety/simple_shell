@@ -96,3 +96,20 @@ char *starts_with(const char *haystack, const char *needle)
 	return ((char *)haystack);
 }
 
+/**
+ * print_list_str - prints the list
+ * @list_t: the list
+ *
+ * Return: printed list
+*/
+size_t print_list_str(const list_t *list)
+{
+	size_t i;
+
+	for (i = 0; list != NULL; i++) 
+	{
+		printf("%s\n", list->str);
+		list = list->next;
+	}
+	return (i);
+}

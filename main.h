@@ -17,6 +17,7 @@
 #define READ_BUF_SIZE 1024
 #define WRITE_BUF_SIZE 1024
 #define BUF_FLUSH -1
+#define HIST_FILE ".history"
 
 extern char **environ;
 
@@ -129,7 +130,7 @@ int shell_env(void);
 int shell_exit(void);
 int builtin_execute(char **tokens);
 int shell_num_builtins(built_s builtin[]);
-char *_getenv(const char *name);
+char *_env(const char *name);
 char **copy_env(char **environ_copy, unsigned int environ_length);
 char *_which(char *command, char *fullpath, char *path);
 int child(char *fullpath, char **tokens);
